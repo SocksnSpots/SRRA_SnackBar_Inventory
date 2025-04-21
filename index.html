@@ -57,7 +57,7 @@
 
   <script>
     // Initialize EmailJS with your public key
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    emailjs.init("CSVhRre_5AKhQKHFl");
 
     // Initial inventory data (exactly 5 items)
     const initialInventory = [
@@ -101,7 +101,7 @@
     // Send CSV data email via EmailJS
     function sendCSVEmail(csvContent) {
       const base64CSV = btoa(csvContent); // Encode CSV as base64
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_CSV_TEMPLATE_ID", {
+      emailjs.send("service_a667fq4", "template_b890q0d", {
         csv_data: base64CSV,
         to_email: "treasurer@sideburnrun.com"
       }).then(
@@ -179,7 +179,7 @@
     // Send restock email via EmailJS
     function sendRestockEmail(message) {
       const cleanMessage = message.replace(/<\/?[^>]+(>|$)/g, "");
-      emailjs.send("YOUR_SERVICE_ID", "YOUR_RESTOCK_TEMPLATE_ID", {
+      emailjs.send("service_a667fq4", "template_2e1xdrb", {
         message: cleanMessage,
         to_email: "treasurer@sideburnrun.com"
       }).then(
